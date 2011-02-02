@@ -19,6 +19,9 @@ function ss {
 function rdm {
 rake db:migrate
 }
+function randspec {
+  ruby -rfileutils -e "Dir['spec/**/*_spec.rb'].each {|f| FileUtils.touch(f, :mtime => (Time.now.to_i - rand(90000)))}"
+}
 ##
 # Your previous /Users/donald/.bash_profile file was backed up as /Users/donald/.bash_profile.macports-saved_2010-03-25_at_14:35:34
 ##
@@ -48,7 +51,7 @@ export COLOR_GRAY='\033[1;30m'
 export COLOR_LIGHT_GRAY='\033[0;37m'
 
 function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
   echo "("${ref#refs/heads/}")"
 }
 
