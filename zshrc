@@ -21,5 +21,14 @@ plugins=(git brew github rails ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export PATH=/usr/local/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/mysql/bin:~/bin
+test -r /sw/bin/init.sh && . /sw/bin/init.sh
+export EDITOR=vim
+export GIT_EDITOR='mate -wl1'
+export AUTOFEATURE=true
+export LDFLAGS=-L/usr/local/lib:$LDFLAGS
+function authme {
+ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub
+}
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
