@@ -1,15 +1,14 @@
-color zenburn
+color darkspectrum
 set guioptions=aAce
 set columns=160
-set guifont=Inconsolata:h12
+set guifont=InconsolataXL:h12
 set wrap
+set colorcolumn=81
+highlight ColorColumn ctermbg=black guibg=grey
 
 " list and invisible characters
 set list
 set listchars=tab:▸\ ,eol:¬
-
-" setup the leader key
-let mapleader = ","
 
 " makes ,w split windows vertically
 nnoremap <leader>w <C-w>v<C-w>l

@@ -1,0 +1,19 @@
+" Needed on some linux distros.
+" see http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+" Gundo
+" http://sjl.bitbucket.org/gundo.vim/
+nnoremap <F5> :GundoToggle<CR>
+
+syntax on
+filetype plugin indent on
+set tabstop=2
+set smarttab
+set shiftwidth=2
+set autoindent
+set expandtab
+
+map <Leader>h :noh<CR>
