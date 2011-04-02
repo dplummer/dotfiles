@@ -27,7 +27,7 @@ alias ssh='nocorrect ssh'
 export PATH=/usr/local/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/Cellar/mysql/5.1.54/bin:~/bin
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 export EDITOR=vim
-export GIT_EDITOR='mvim -f'
+export GIT_EDITOR='vim -f'
 export AUTOFEATURE=true
 export LDFLAGS=-L/usr/local/lib:$LDFLAGS
 function authme {
