@@ -1,4 +1,4 @@
-color darkspectrum
+" color darkspectrum
 set guioptions=aAce
 set columns=160
 set guifont=InconsolataXL:h12
@@ -6,15 +6,16 @@ set wrap
 set colorcolumn=81
 highlight ColorColumn ctermbg=black guibg=grey
 
-" list and invisible characters
-set list
-set listchars=tab:▸\ ,eol:¬
-
-" makes ,w split windows vertically
-nnoremap <leader>w <C-w>v<C-w>l
-
-" split window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+function! ToggleBackground()
+    if (w:solarized_style=="dark")
+    let w:solarized_style="light"
+    colorscheme solarized
+else
+    let w:solarized_style="dark"
+    colorscheme solarized
+endif
+endfunction
+command! Togbg call ToggleBackground()
+nnoremap <F6> :call ToggleBackground()<CR>
+inoremap <F6> <ESC>:call ToggleBackground()<CR>a
+vnoremap <F6> <ESC>:call ToggleBackground()<CR>

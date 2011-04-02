@@ -4,6 +4,11 @@ filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
+" Solarized colorscheme
+set background=dark
+let g:solarized_termcolors=16
+colorscheme solarized
+
 " Gundo
 " http://sjl.bitbucket.org/gundo.vim/
 nnoremap <F5> :GundoToggle<CR>
@@ -16,4 +21,17 @@ set shiftwidth=2
 set autoindent
 set expandtab
 
+" list and invisible characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
 map <Leader>h :noh<CR>
+
+" makes ,w split windows vertically
+nnoremap <leader>w <C-w>v<C-w>l
+
+" split window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
