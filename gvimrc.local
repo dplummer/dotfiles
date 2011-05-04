@@ -1,7 +1,8 @@
 " color darkspectrum
 set guioptions=aAce
 set columns=160
-set guifont=InconsolataXL:h12
+set guifont=Inconsolata\ XL\ 9
+
 set wrap
 set colorcolumn=81
 highlight ColorColumn ctermbg=black guibg=grey
