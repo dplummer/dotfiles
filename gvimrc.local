@@ -1,7 +1,9 @@
 " color darkspectrum
 set guioptions=aAce
-set columns=160
-set guifont=Inconsolata\ XL\ 9
+" set columns=160
+" set guifont=Inconsolata\ 13
+colorscheme solarized
+set background=dark
 
 set wrap
 set colorcolumn=81

@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias ssh='nocorrect ssh'
-export PATH=/usr/local/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/Cellar/mysql/5.1.54/bin:~/bin
+export PATH=/usr/local/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/Cellar/mysql/5.1.54/bin:~/bin:~/.cabal/bin:/opt/java/jre/bin:/opt/ruby-enterprise-1.8.7-2011.03/bin
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 export EDITOR=vim
 export GIT_EDITOR='vim -f'
