@@ -1,9 +1,10 @@
-" color darkspectrum
 set guioptions=aAce
+set guifont=Inconsolata\ 10
+" color darkspectrum
+color zenburn
 " set columns=160
-" set guifont=Inconsolata\ 13
-colorscheme solarized
-set background=dark
+" colorscheme solarized
+" set background=dark
 
 set wrap
 set colorcolumn=81
