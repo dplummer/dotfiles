@@ -6,7 +6,7 @@ call pathogen#runtime_append_all_bundles()
 
 " Solarized colorscheme
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme darkspectrum
 set background=dark
 
 
