@@ -9,6 +9,25 @@ let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
 
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+autocmd FileType ruby,perl,tex set shiftwidth=2
+
+augroup filetypedetect
+  au! BufNewFile,BufRead *.ch setf cheat
+  au BufNewFile,BufRead *.liquid setf liquid
+  au! BufRead,BufNewFile *.haml setfiletype haml
+  autocmd BufNewFile,BufRead *.yml setf eruby
+augroup ENDu"
+
+
 " Gundo
 " http://sjl.bitbucket.org/gundo.vim/
 nnoremap <F5> :GundoToggle<CR>
@@ -46,3 +65,18 @@ let g:fuzzy_roots="app\nlib\nconfig\npublic/javascripts\npublic/stylesheets\nfea
 let g:fuzzy_ceiling=30000
 let g:fuzzy_matching_limit=25
 let g:fuzzy_ignore="gems/**, log/**, public/**, vendor/**, public/images/**, public/themes/**, tmp/**, *.gem, *.log, *.db, *.sqlite*, doc/**, rdoc/**, *.png, *.jp*g, *.PNG, *.JP*G, *.GIF"
+
+" vertical/horizontal scroll off settings for readability
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
+
+map K <Nop>
+
+" Fancy statusline
+set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-20.(line=%l,col=%c%V,totlin=%L%)\%h%m%r%=%-40(,%n%Y%)\%P
+" Syntastic stuff for status line
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_enable_signs = 1
