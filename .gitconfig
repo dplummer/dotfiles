@@ -2,6 +2,7 @@
   name = Donald Plummer
   email = donald@cideasphere.com
 [alias]
+  s = status
   st = status
   s = status
   ci = commit

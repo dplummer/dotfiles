@@ -1,0 +1,22 @@
+set guioptions=aAce
+set guifont=Inconsolata\ 10
+" color darkspectrum
+color zenburn
+" set columns=160
+" colorscheme solarized
+" set background=dark
+
+set wrap
+set colorcolumn=81
+highlight ColorColumn ctermbg=black guibg=grey
+
+map <Leader>t :FuzzyFinderTextMate<CR>
+map <leader>b :FuzzyFinderBuffer<CR>
+map <leader>] :FuzzyFinderMruFile<CR>
+map <leader>r :ruby finder.rescan!<CR>
+let g:proj_flags="imstg"
+let g:fuzzy_roots="app\nlib\nconfig\npublic/javascripts\npublic/stylesheets\nfeatures\nspec\nsrc\ntest"
+let g:fuzzy_ceiling=30000
+let g:fuzzy_matching_limit=25
+let g:fuzzy_ignore="gems/**, log/**, public/**, vendor/**, public/images/**, public/themes/**, tmp/**, *.gem, *.log, *.db, *.sqlite*, doc/**, rdoc/**, *.png, *.jp*g, *.PNG, *.JP*G, *.GIF"
+
