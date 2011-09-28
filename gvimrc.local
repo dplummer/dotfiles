@@ -1,14 +1,14 @@
 set guioptions=aAce
 set guifont=Inconsolata\ 10
-" color darkspectrum
-color zenburn
-" set columns=160
-" colorscheme solarized
-" set background=dark
 
 set wrap
 set colorcolumn=81
-highlight ColorColumn ctermbg=black guibg=grey
+" highlight ColorColumn ctermbg=black guibg=grey
+
+colorscheme darkspectrum
+" set columns=160
+" colorscheme solarized
+" set background=dark
 
 function! ToggleBackground()
     if (w:solarized_style=="dark")
