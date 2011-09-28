@@ -6,10 +6,10 @@ URxvt.scrollBar: false
 # tabs and links
 #URxvt.perl-ext-common: default,tabbed,matcher
 URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: /usr/bin/chromium
+URxvt.urlLauncher: /usr/bin/google-chrome
 URxvt.matcher.button: 1
 
-URxvt*font: xft:inconsolata:pixelsize=13:antialias=true:hinting=true
+URxvt*font: xft:inconsolata:pixelsize=12:antialias=true:hinting=true
 
 URxvt*foreground: #f2f2f2
 #URxvt*background: #101010
