@@ -12,6 +12,7 @@
   who = shortlog -s --
   plr = pull --rebase
   a = add -A
+  head = log -n3
 [color]
   ui = auto
 [color "branch"]
