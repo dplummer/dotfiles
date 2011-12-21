@@ -9,6 +9,9 @@ let g:solarized_termcolors=256
 colorscheme darkspectrum
 set background=dark
 
+set equalalways
+autocmd QuickFixCmdPost *grep* copen
+autocmd QuickFixCmdPost *log* copen
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
