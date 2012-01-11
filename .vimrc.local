@@ -77,7 +77,8 @@ set sidescroll=1
 map K <Nop>
 
 " Fancy statusline
-set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-20.(line=%l,col=%c%V,totlin=%L%)\%h%m%r%=%-40(,%n%Y%)\%P
+set statusline=%<%f\ \%h%m%r%=%-40(,%n%Y%)\%P
+" set statusline=%<%f\ (line=%l,col=%c%V,totlin=%L%)\%h%m%r%=%-40(,%n%Y%)\%P
 " Syntastic stuff for status line
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
