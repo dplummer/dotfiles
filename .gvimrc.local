@@ -8,7 +8,7 @@ color zenburn
 
 set wrap
 set colorcolumn=81
-highlight ColorColumn ctermbg=black guibg=grey
+hi ColorColumn ctermbg=black guibg=#343434
 
 map <Leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
@@ -20,3 +20,25 @@ let g:fuzzy_ceiling=30000
 let g:fuzzy_matching_limit=25
 let g:fuzzy_ignore="gems/**, log/**, public/**, vendor/**, public/images/**, public/themes/**, tmp/**, *.gem, *.log, *.db, *.sqlite*, doc/**, rdoc/**, *.png, *.jp*g, *.PNG, *.JP*G, *.GIF"
 
+
+" added by Michael
+" fugitive
+nmap <leader>ga :Gwrite<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gl :Glog 
+nmap <leader>gd :Gdiff<cr>
+nmap <leader>gb :Gblame<cr>
+nmap <leader>gr :Gremove
+nmap <leader>gw :Gbrowse<cr>
+nmap <leader>du :diffupdate<cr>
+nmap <leader>co :copen<cr>
+nmap <leader>gg :Ggrep
+nmap <F1> <nop>
+" Better have terminal pause disabled
+:map <silent> <c-s> :if expand("%") == ""<CR>:browse confirm w<CR>:else<CR>:confirm w<CR>:endif<CR>
+" Works in insert mode, skips confirm dialog
+:imap <c-s> <c-o><c-s>
+
+"control-q to close a buffer/quit
+:map <silent> <c-q> :confirm q<CR>
