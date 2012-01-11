@@ -43,3 +43,7 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_HEAP_FREE_MIN=500000
 export RUBY_GC_MALLOC_LIMIT=200000000
 
+alias pdf='apvlv'
+
+# Set the display for remote selenium
+export DISPLAY=:0
