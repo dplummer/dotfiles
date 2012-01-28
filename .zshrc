@@ -16,7 +16,7 @@ export ZSH_THEME="mrtazz"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github nyan)
+plugins=(git github nyan bundler)
 
 source $ZSH/oh-my-zsh.sh
 
