@@ -1,5 +1,5 @@
 set guioptions=aAce
-set guifont=Inconsolata\ 10
+set guifont=Droid\ Sans\ Mono\ 9
 " color darkspectrum
 color zenburn
 " set columns=160
