@@ -8,6 +8,9 @@ call pathogen#runtime_append_all_bundles()
 let g:solarized_termcolors=256
 colorscheme darkspectrum
 set background=dark
+set wrap
+set colorcolumn=81
+hi ColorColumn ctermbg=red guibg=#343434
 
 set equalalways
 autocmd QuickFixCmdPost *grep* copen
