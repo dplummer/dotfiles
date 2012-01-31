@@ -2,6 +2,7 @@
   name = Donald Plummer
   email = donald@cideasphere.com
 [alias]
+  plr = pull --rebase
   s = status
   st = status
   ci = commit
