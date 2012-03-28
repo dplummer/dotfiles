@@ -42,3 +42,6 @@ nmap <F1> <nop>
 
 "control-q to close a buffer/quit
 :map <silent> <c-q> :confirm q<CR>
+
+"Alias leader to , as well as \
+:nmap , \
