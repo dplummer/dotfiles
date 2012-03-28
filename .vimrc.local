@@ -90,3 +90,6 @@ let g:syntastic_enable_signs = 1
 
 map <C-f> <S-Down>
 map <C-F> <S-Down>
+
+autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+highlight def link rubyRspec Function
