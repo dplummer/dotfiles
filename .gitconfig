@@ -29,6 +29,8 @@
   b = branch
   ds = diff --stat=160,120
   dh1 = diff HEAD~1
+  cob = checkout -b
+  poke = !git ls-remote origin | grep -w refs/heads/poke && git push origin :poke || git push origin master:poke
 
 [merge]
   tool = vimdiff
