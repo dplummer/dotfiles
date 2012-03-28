@@ -22,9 +22,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+unsetopt correct_all
 
-alias ssh='nocorrect ssh'
-export PATH=/usr/local/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/Cellar/mysql/5.1.54/bin:~/bin:~/.cabal/bin:/opt/java/jre/bin:/opt/ruby-enterprise-1.8.7-2011.03/bin
+export AWS_AUTO_SCALING_HOME=/home/dplummer/src/ec2-autoscaling/AutoScaling-1.0.49.1
+export PATH=/usr/local/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/Cellar/mysql/5.1.54/bin:~/bin:~/.cabal/bin:/opt/java/jre/bin:/opt/ruby-enterprise-1.8.7-2011.03/bin:$AWS_AUTO_SCALING_HOME/bin:/home/dplummer/bin
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 export EDITOR=vim
 export GIT_EDITOR='vim -f'
@@ -47,3 +48,8 @@ alias pdf='apvlv'
 
 # Set the display for remote selenium
 export DISPLAY=:0
+
+export EC2_CERT=/home/dplummer/Dropbox/CrystalCommerce/configurations/crystal-aws-cert.pem
+export EC2_PRIVATE_KEY=/home/dplummer/Dropbox/CrystalCommerce/configurations/crystal-aws-pk.pem
+export AWS_AUTO_SCALING_URL=https://autoscaling.us-west-2.amazonaws.com
+export EC2_URL=https://ec2.us-west-2.amazonaws.com
