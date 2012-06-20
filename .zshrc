@@ -56,3 +56,6 @@ export EC2_URL=https://ec2.us-west-2.amazonaws.com
 
 # CrystalCommerce specific ENV
 source $HOME/.crystalrc
+
+# tmuxinator!
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
