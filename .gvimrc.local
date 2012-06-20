@@ -1,6 +1,6 @@
 set guioptions=aAce
 set guifont=Droid\ Sans\ Mono\ 9
-color darkspectrum
+color Tomorrow-Night
 " color zenburn
 " set columns=160
 " colorscheme solarized
