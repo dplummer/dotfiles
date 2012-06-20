@@ -9,37 +9,47 @@ pre:
 tabs:
   - redis: redis-cli MONITOR
   - admin:
-      name: admin
       layout: main-vertical
       panes:
-        - rvm use ree && cd admin && pry
-        - rvm use ree && cd admin && rake resque:work QUEUE=\*
-        - rvm use ree && cd admin && ./script/server -p 3002
+        - cd admin && pry
+        - cd admin && git fetch -a
+        - cd admin && rake resque:work QUEUE=\*
+        - cd admin && ./script/server -p 3002
   - frontend:
-      name: frontend
       layout: main-vertical
       panes:
-        - 
-        - rvm use ree && cd frontend && ./script/server -p 3000
+        - cd frontend && git fetch -a
+        - cd frontend && ./script/server -p 3000
+  - hive:
+      panes:
+        - cd hive && git fetch -a
+        - cd hive && ./script/server -p 3011
+  - hive-inventory:
+      panes:
+        - cd hive-inventory && git fetch -a
+        - cd hive-inventory && rails s -p 3012
+        - cd hive-inventory && guard start
   - roadhouse:
-      name: roadhouse
       layout: main-vertical
       panes:
-        - rvm use 1.9.3 && cd road_house && pry
-        - rvm use 1.9.3 && cd road_house && rails s -p 3014
+        - cd road_house && git fetch -a
+        - cd road_house && rails s -p 3014
+        - cd road_house && guard start
   - skyhook:
-      name: skyhook
       layout: main-vertical
       panes:
         - tail -fn0 SkyHook/skyhook.log
-        - rvm use 1.9.3 && cd SkyHook && rake em_resque:work
+        - cd SkyHook && git fetch -a
+        - cd SkyHook && rake em_resque:work
+        - cd SkyHook && guard start
   - pricebot:
-      name: pricebot
       layout: main-vertical
       panes:
         - tail -fn0 price-bot/log/pricebot.log
-        - rvm use 1.9.3 && cd price-bot && rails s -p 3021
-        - rvm use 1.9.3 && cd price-bot && rake em_resque:work QUEUE=\*
+        - cd price-bot && git fetch -a
+        - cd price-bot && rails s -p 3021
+        - cd price-bot && rake em_resque:work QUEUE=\*
+        - cd price-bot && guard start
   - shell:
       panes:
         -
