@@ -1,0 +1,46 @@
+# ~/.tmuxinator/devapps.yml
+# you can make as many tabs as you wish...
+
+project_name: Crystal Apps in Development
+project_root: ~/src
+# socket_name: devapps # Not needed.  Remove to use default socket
+# rvm: ree
+pre: 
+tabs:
+  - redis: redis-cli MONITOR
+  - admin:
+      name: admin
+      layout: main-vertical
+      panes:
+        - rvm use ree && cd admin && pry
+        - rvm use ree && cd admin && rake resque:work QUEUE=\*
+        - rvm use ree && cd admin && ./script/server -p 3002
+  - frontend:
+      name: frontend
+      layout: main-vertical
+      panes:
+        - 
+        - rvm use ree && cd frontend && ./script/server -p 3000
+  - roadhouse:
+      name: roadhouse
+      layout: main-vertical
+      panes:
+        - rvm use 1.9.3 && cd road_house && pry
+        - rvm use 1.9.3 && cd road_house && rails s -p 3014
+  - skyhook:
+      name: skyhook
+      layout: main-vertical
+      panes:
+        - tail -fn0 SkyHook/skyhook.log
+        - rvm use 1.9.3 && cd SkyHook && rake em_resque:work
+  - pricebot:
+      name: pricebot
+      layout: main-vertical
+      panes:
+        - tail -fn0 price-bot/log/pricebot.log
+        - rvm use 1.9.3 && cd price-bot && rails s -p 3021
+        - rvm use 1.9.3 && cd price-bot && rake em_resque:work QUEUE=\*
+  - shell:
+      panes:
+        -
+        -
