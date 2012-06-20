@@ -53,3 +53,6 @@ export EC2_CERT=/home/dplummer/Dropbox/CrystalCommerce/configurations/crystal-aw
 export EC2_PRIVATE_KEY=/home/dplummer/Dropbox/CrystalCommerce/configurations/crystal-aws-pk.pem
 export AWS_AUTO_SCALING_URL=https://autoscaling.us-west-2.amazonaws.com
 export EC2_URL=https://ec2.us-west-2.amazonaws.com
+
+# CrystalCommerce specific ENV
+source $HOME/.crystalrc
