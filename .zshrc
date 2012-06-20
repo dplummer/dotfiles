@@ -18,6 +18,10 @@ export ZSH_THEME="gallois"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git github nyan bundler)
 
+# To keep tmux window names from changing
+# http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
+DISABLE_AUTO_TITLE=true
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
