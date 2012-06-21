@@ -20,6 +20,11 @@ tabs:
       panes:
         - cd frontend && git fetch -a
         - cd frontend && ./script/server -p 3000
+  - pos:
+      layout: main-vertical
+      panes:
+        - cd PointOfSale && git fetch -a
+        - cd PointOfSale && ./script/server -p 3003
   - hive:
       panes:
         - cd hive && git fetch -a
