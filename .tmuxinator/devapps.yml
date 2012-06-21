@@ -38,7 +38,7 @@ tabs:
   - skyhook:
       layout: main-vertical
       panes:
-        - tail -fn0 SkyHook/skyhook.log
+        - tail -fn0 SkyHook/log/skyhook.log
         - cd SkyHook && git fetch -a
         - cd SkyHook && rake em_resque:work
         - cd SkyHook && guard start
