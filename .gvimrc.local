@@ -1,10 +1,13 @@
 set guioptions=aAce
 set guifont=Droid\ Sans\ Mono\ 9
-color Tomorrow-Night
+color torte
+" color Tomorrow-Night
 " color zenburn
 " set columns=160
-" colorscheme solarized
-" set background=dark
+set background=dark
+set g:solarized_contrast="high"
+colorscheme solarized
+hi Normal guibg=#00111f
 
 set wrap
 set colorcolumn=81
