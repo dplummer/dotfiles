@@ -5,4 +5,5 @@ xmodmap -e "add Control = Control_L"
 
 xsetroot -cursor_name left_ptr
 xset r rate 200 30 &
+/usr/bin/xscreensaver -no-splash &
 xmonad
