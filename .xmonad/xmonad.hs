@@ -180,7 +180,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+        | (key, sc) <- zip [xK_e, xK_w, xK_r] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
@@ -310,19 +310,24 @@ myStartupHook = return ()
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
--- Run xmonad with the settings you specify. No need to modify this.
---
--- main = xmonad =<< dzen defaults
---main = xmonad myConfig
-main = do
-    xmproc <- spawnPipe "/usr/bin/xmobar /home/dplummer/.xmobarrc"
-    xmonad myConfig
-
-
---main = xmonad =<< statusBar barCmd barPP toggleStrutsKey myConfig
+main = xmonad =<< statusBar cmd pp kb conf
+  where 
+    cmd = "bash -c \"tee >(xmobar -x0) | xmobar -x1\""
+    pp = customPP
+    kb = toggleStrutsKey
+    conf = myConfig
 
 -- Keybinding to toggle the gap for the bar.
--- toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b) -- WAT
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
+customPP = defaultPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">"
+                     , ppHidden = xmobarColor "#C98F0A" ""
+                     , ppHiddenNoWindows = xmobarColor "#C9A34E" ""
+                     , ppUrgent = xmobarColor "#FFFFAF" "" . wrap "[" "]" 
+                     , ppLayout = xmobarColor "#C9A34E" ""
+                     , ppTitle =  xmobarColor "#C9A34E" "" . shorten 80
+                     , ppSep = xmobarColor "#429942" "" " | "
+                     }
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will

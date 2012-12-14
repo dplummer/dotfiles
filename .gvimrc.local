@@ -1,6 +1,8 @@
 set guioptions=aAce
 set guifont=Droid\ Sans\ Mono\ 9
+set background=light
 colorscheme pyte
 
 set wrap
 set colorcolumn=81
+#hi ColorColumn ctermbg=black guibg=#343434

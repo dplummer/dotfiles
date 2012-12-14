@@ -25,11 +25,10 @@ DISABLE_AUTO_TITLE=true
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
 unsetopt correct_all
 
 export AWS_AUTO_SCALING_HOME=/home/dplummer/src/ec2-autoscaling/AutoScaling-1.0.49.1
-export PATH=/usr/local/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/Cellar/mysql/5.1.54/bin:~/bin:~/.cabal/bin:/opt/java/jre/bin:/opt/ruby-enterprise-1.8.7-2011.03/bin:$AWS_AUTO_SCALING_HOME/bin:/home/dplummer/bin
+export PATH=~/bin:/usr/local/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/Cellar/mysql/5.1.54/bin:~/bin:~/.cabal/bin:/opt/java/jre/bin:/opt/ruby-enterprise-1.8.7-2011.03/bin:$AWS_AUTO_SCALING_HOME/bin:/home/dplummer/bin:/opt/android-sdk/tools
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 export EDITOR=vim
 export GIT_EDITOR='vim -f'
@@ -38,6 +37,7 @@ export LDFLAGS=-L/usr/local/lib:$LDFLAGS
 function authme {
 ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub
 }
+export GOROOT=/usr/lib/go
 
 unsetopt auto_name_dirs
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -62,6 +62,10 @@ export EC2_URL=https://ec2.us-west-2.amazonaws.com
 source $HOME/.crystalrc
 
 export BROWSER=google-chrome
+alias make='make -j3'
 
 # tmuxinator!
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+# fix locale for cucumber
+export LC_CTYPE=en_US.UTF-8

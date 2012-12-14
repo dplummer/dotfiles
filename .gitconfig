@@ -60,4 +60,4 @@
 [web]
   browser = google-chrome
 [push]
-	default = matching
+  default = matching
