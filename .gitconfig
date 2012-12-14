@@ -59,3 +59,5 @@
   editor = vim
 [web]
   browser = google-chrome
+[push]
+	default = matching
