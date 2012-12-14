@@ -1,14 +1,6 @@
 set guioptions=aAce
 set guifont=Droid\ Sans\ Mono\ 9
-color torte
-" color Tomorrow-Night
-" color zenburn
-" set columns=160
-set background=dark
-set g:solarized_contrast="high"
-colorscheme solarized
-hi Normal guibg=#00111f
+colorscheme pyte
 
 set wrap
 set colorcolumn=81
-hi ColorColumn ctermbg=black guibg=#343434
