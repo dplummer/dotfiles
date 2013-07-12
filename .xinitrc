@@ -5,5 +5,7 @@ xmodmap -e "add Control = Control_L"
 
 xsetroot -cursor_name left_ptr
 xset r rate 200 30 &
+/home/dplummer/.dropbox-dist/dropboxd &
+start-pulseaudio-x11
 /usr/bin/xscreensaver -no-splash &
 xmonad
