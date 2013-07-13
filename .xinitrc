@@ -1,3 +1,6 @@
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
 # bind caps lock to esc
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "keysym Caps_Lock = Control_L"
