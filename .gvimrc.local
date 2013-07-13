@@ -5,4 +5,8 @@ colorscheme pyte
 
 set wrap
 set colorcolumn=81
-#hi ColorColumn ctermbg=black guibg=#343434
+set expandtab
+
+" Work around FIFO files + NERDTree + Janus bug described:
+" https://github.com/scrooloose/nerdtree/issues/139
+autocmd! AuNERDTreeCmd FocusGained
