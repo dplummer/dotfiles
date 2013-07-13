@@ -3,7 +3,7 @@ Config {
   bgColor     = "#000000",
   fgColor     = "#FFFFFF",
   position =  Top,
-  lowerOnStart = False,
+  lowerOnStart = True,
   commands     = [
               Run Cpu ["<cpu0>/<cpu1>","-L","3","-H","50","-l","green","--normal","orange","--high","red"]   300,
               Run DiskU [("/", "/: <free>/<size>"), ("/home", "/home: <free>/<size>")] ["disku"] 6000,
@@ -16,5 +16,5 @@ Config {
             ],
   sepChar      = "%",
   alignSep     = "}{",
-  template = "%hostname% }{ %disku% <fc=#0033FF>|</fc> %cpu% <fc=#0033FF>|</fc> %memory% <fc=#0033FF>|</fc> %swap% <fc=#0033FF>|</fc> %battery% <fc=#0033FF>|</fc> %date%"
+  template = "%StdinReader% }{ %hostname% %disku% <fc=#0033FF>|</fc> %cpu% <fc=#0033FF>|</fc> %memory% <fc=#0033FF>|</fc> %swap% <fc=#0033FF>|</fc> %battery% <fc=#0033FF>|</fc> %date%"
 }
