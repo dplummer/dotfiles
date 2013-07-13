@@ -47,6 +47,7 @@ export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_HEAP_FREE_MIN=500000
 export RUBY_GC_MALLOC_LIMIT=200000000
+export RUBY_FREE_MIN=200000
 
 alias pdf='apvlv'
 
@@ -73,3 +74,4 @@ GOPATH=/home/dplummer/gocode
 PATH="$PATH:$GOPATH/bin"
 
 alias vim-install=rake -f ~/.vim/rakefile-vim-install
+alias make='make -j5'
