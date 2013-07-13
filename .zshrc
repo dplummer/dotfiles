@@ -16,7 +16,7 @@ export ZSH_THEME=dplummer
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github nyan bundler)
+plugins=(git bundler)
 
 # To keep tmux window names from changing
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
@@ -69,3 +69,7 @@ alias make='make -j3'
 
 # fix locale for cucumber
 export LC_CTYPE=en_US.UTF-8
+GOPATH=/home/dplummer/gocode
+PATH="$PATH:$GOPATH/bin"
+
+alias vim-install=rake -f ~/.vim/rakefile-vim-install
