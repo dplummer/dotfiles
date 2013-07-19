@@ -1,6 +1,4 @@
-colorscheme breeze
-
-let g:airline_enable_fugitive=0
+colorscheme Tomorrow-Night-Eighties
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
@@ -163,7 +161,7 @@ call s:DefineCommand("mkdir", "Mkdir")
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 set linespace=0
 
-let g:airline_theme='light'
+let g:airline_theme='dark'
 let g:airline_powerline_fonts=1
 
 " Directories for swp files
@@ -172,6 +170,8 @@ set directory=~/.vim/backup
 
 " Work around FIFO files + NERDTree + Janus bug described:
 " https://github.com/scrooloose/nerdtree/issues/139
-autocmd! AuNERDTreeCmd FocusGained
+" "autocmd! AuNERDTreeCmd FocusGained
 " Shut the hell up NERD
-let g:NERDShutUp=1
+" "let g:NERDShutUp=1
+
+autocmd BufNewFile,BufRead *.haml,*.hamlbars setf haml
