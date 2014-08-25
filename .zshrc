@@ -75,3 +75,5 @@ PATH="$PATH:$GOPATH/bin"
 
 alias vim-install=rake -f ~/.vim/rakefile-vim-install
 alias make='make -j5'
+
+eval "$(direnv hook zsh)"

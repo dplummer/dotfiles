@@ -31,6 +31,7 @@
   dh1 = diff HEAD~1
   cob = checkout -b
   poke = !git ls-remote origin | grep -w refs/heads/poke && git push origin :poke || git push origin master:poke
+	up = "!git remote update -p; git merge --ff-only @{u}"
 
 [merge]
   tool = vimdiff
