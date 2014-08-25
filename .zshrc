@@ -54,14 +54,6 @@ alias pdf='apvlv'
 # Set the display for remote selenium
 export DISPLAY=:0
 
-export EC2_CERT=/home/dplummer/Dropbox/CrystalCommerce/configurations/crystal-aws-cert.pem
-export EC2_PRIVATE_KEY=/home/dplummer/Dropbox/CrystalCommerce/configurations/crystal-aws-pk.pem
-export AWS_AUTO_SCALING_URL=https://autoscaling.us-west-2.amazonaws.com
-export EC2_URL=https://ec2.us-west-2.amazonaws.com
-
-# CrystalCommerce specific ENV
-source $HOME/.crystalrc
-
 export BROWSER=google-chrome
 alias make='make -j3'
 
@@ -70,7 +62,7 @@ alias make='make -j3'
 
 # fix locale for cucumber
 export LC_CTYPE=en_US.UTF-8
-GOPATH=/home/dplummer/gocode
+GOPATH=/Users/dplummer
 PATH="$PATH:$GOPATH/bin"
 
 alias vim-install=rake -f ~/.vim/rakefile-vim-install
