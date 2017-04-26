@@ -22,4 +22,5 @@ else
   fi
 fi
 
-PROMPT='%{$fg[cyan]%}[%{$fg[red]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[cyan]%}%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+# %{$fg[cyan]%}[%{$fg[red]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$fg[magenta]%}%m%{$reset_color%}:
+PROMPT='%{$fg[cyan]%}[%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '

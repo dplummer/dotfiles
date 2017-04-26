@@ -6,10 +6,12 @@ call pathogen#runtime_append_all_bundles()
 
 " Solarized colorscheme
 let g:solarized_termcolors=256
-colorscheme darkspectrum
-set background=dark
+set background=light
+colorscheme pyte
+" colorscheme darkspectrum
+" set background=dark
 set wrap
-set colorcolumn=81
+set colorcolumn=101
 hi ColorColumn ctermbg=red guibg=#343434
 
 set equalalways

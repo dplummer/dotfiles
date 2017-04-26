@@ -1,7 +1,8 @@
 set guioptions=aAce
-set guifont=Droid\ Sans\ Mono\ 9
+" set guifont=Inconsolata\ for\ Powerline 14
+set macligatures
+set guifont=Fira\ Code:h14
 set background=light
-colorscheme pyte
 
 set wrap
 set colorcolumn=81
