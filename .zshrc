@@ -18,7 +18,7 @@ export ZSH_THEME=agnoster
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler mix)
+plugins=(git bundler mix zsh-autosuggestions)
 
 # To keep tmux window names from changing
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
@@ -117,3 +117,6 @@ t() {
     LOGGER_LEVEL='debug' RAILS_ENV='test' /usr/bin/env time bundle exec "${cmd} $@"
   fi
 }
+
+export PATH="$HOME/.bin:$PATH"
+eval "$(rbenv init - --no-rehash)"
