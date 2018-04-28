@@ -3,9 +3,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export DEFAULT_USER=dplummer
+export DEFAULT_USER=donaldp
 export ZSH_THEME=agnoster
-#export ZSH_THEME="powerlevel9k/powerlevel9k"
+#export ZSH_THEME=dplummer
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -29,8 +29,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 unsetopt correct_all
 
-export AWS_AUTO_SCALING_HOME=/home/dplummer/src/ec2-autoscaling/AutoScaling-1.0.49.1
-export PATH=~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:${PATH}:/usr/local/Cellar/mysql/5.1.54/bin:~/bin:~/.cabal/bin:/opt/java/jre/bin:/opt/ruby-enterprise-1.8.7-2011.03/bin:$AWS_AUTO_SCALING_HOME/bin:/home/dplummer/bin:/opt/android-sdk/tools
+export PATH=~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:${PATH}
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 export EDITOR=vim
 export GIT_EDITOR='vim -f'
@@ -39,8 +38,6 @@ export LDFLAGS=-L/usr/local/lib
 function authme {
 ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub
 }
-export GOROOT=/usr/local/Cellar/go/1.3.1/libexec
-
 unsetopt auto_name_dirs
 
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
@@ -53,14 +50,16 @@ alias pdf='apvlv'
 export DISPLAY=:0
 
 export BROWSER=google-chrome
-alias make='make -j3'
+alias make='make -j5'
+
+alias rg='rg --color always'
 
 # tmuxinator!
 # [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # fix locale for cucumber
 export LC_CTYPE=en_US.UTF-8
-export GOPATH=/Users/dplummer
+export GOPATH=/Users/donaldp
 export PATH="$PATH:$GOPATH/bin"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
@@ -70,37 +69,13 @@ alias make='make -j5'
 alias rtest='bundle exec ruby -I"lib:test"'
 alias retag='/usr/local/bin/ctags -R .'
 
-source ~/.avvo.env
 source ~/.secrets.env
-
-export SSL_CERT_FILE=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/security/cacerts
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-eval "$(rbenv init -)"
+#. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/completions/asdf.bash
 
-## rbenv-related functions
-rb+() { rbenv install $1; }
-rb-() { rbenv uninstall $1; }
-rbis_() { ruby-build --definitions; }
-rbis() { rbis_ | column; }
-rbup_() { brew upgrade rbenv 2> /dev/null; brew upgrade ruby-build 2> /dev/null; rbenv -v; ruby-build --version; }
-rbup() { rbis_ > rbis0.txt; rbup_; rbis_ > rbis1.txt; gdiff rbis0.txt rbis1.txt; }
-rbs() { rbenv -v; ruby-build --version; rbenv versions; echo "CURRENT RUBY: $(ruby -v)"; }
-rb0() { rbenv local system; rbs; }
-rb2() { rbenv local 2.3.1; rbs; }
-rb225() { rbenv local 2.2.5; rbs; }
-rb212() { rbenv local 2.1.2; rbs; }
-rb2110() { rbenv local 2.1.10; rbs; }
-rbe() { rbenv each "$@"; }
-rgs() { rbe -v gem list; }
-rgo() { rbe -v gem outdated; }
-rgu() { rbe -v gem update "$@"; }
-rgc() { rbe -v gem cleanup; }
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
@@ -119,4 +94,42 @@ t() {
 }
 
 export PATH="$HOME/.bin:$PATH"
-eval "$(rbenv init - --no-rehash)"
+
+source ~/ls_colors.zsh
+
+libs=( \
+  'gettext' \
+  'icu4c' \
+  'imagemagick@6' \
+  'libxml2' \
+  'mysql@5.6' \
+  'openssl' \
+  'qt' \
+  'readline' \
+)
+for lib in ${libs[@]}; do
+  # libpath="$(brew --prefix ${lib})"
+  libpath="/usr/local/opt/${lib}" # faster than `brew --prefix`
+  # headers
+  export C_INCLUDE_PATH="${C_INCLUDE_PATH}:${libpath}/include"
+  export CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH}:${libpath}/include"
+  export OBJC_INCLUDE_PATH="${OBJC_INCLUDE_PATH}:${libpath}/include"
+  export OBJCPLUS_INCLUDE_PATH="${OBJCPLUS_INCLUDE_PATH}:${libpath}/include"
+  # linkables
+  export LDFLAGS="${LDFLAGS} -L${libpath}/lib"
+  # packages
+  export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${libpath}/lib/pkgconfig"
+  # executables
+  export PATH="${PATH}:${libpath}/bin"
+done
+
+mrm () { rm -rf deps/ _build/ tarballs/ "$@"; }
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/donaldp/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/donaldp/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/donaldp/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/donaldp/google-cloud-sdk/completion.zsh.inc'; fi
